@@ -5,6 +5,7 @@ import { LAYOUT } from '../identifiers.js';
 
 const NavDrawer = ({ active, children, className, onOverlayClick, permanentAt, pinned, scrollY, theme, width }) => {
   const rootClasses = classnames([theme.navDrawer], {
+    [theme.permanent]: permanentAt,
     [theme[permanentAt + 'Permanent']]: permanentAt,
     [theme.wide]: (width === 'wide'),
     [theme.active]: active,

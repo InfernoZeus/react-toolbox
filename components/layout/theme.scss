@@ -37,7 +37,6 @@
     }
 
     .drawerContent {
-      @include shadow-2dp();
       display: flex;
       width: $navigation-drawer-mobile-width;
       max-width: $navigation-drawer-max-mobile-width;
@@ -66,8 +65,9 @@
     }
 
     &.active {
-      &:not(.pinned) {
+      &:not(.pinned):not(.permanent) {
         @include open();
+        @include shadow-2dp();
         .scrim {
           width: 100%;
           background-color: rgba($drawer-overlay-color, $drawer-overlay-opacity);
